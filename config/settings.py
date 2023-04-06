@@ -9,11 +9,16 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+from __future__ import unicode_literals
 import os
 from pathlib import Path
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+
+
+from django.core.exceptions import ImproperlyConfigured
+__all__ = ['validate']
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -85,7 +90,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+
 
 
 # Database
